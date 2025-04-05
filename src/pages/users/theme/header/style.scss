@@ -368,7 +368,7 @@ $bannerImg: "/assets/users/images/hero/banner.jpg";
     display: none;
 }
 
-@include Responsive($MEDIUM_DEVICE) { 
+@include Responsive($MEDIUM_DEVICE) {
     .hero__search__form {
         width: 530px !important;
     }
