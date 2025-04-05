@@ -10,12 +10,14 @@ import {
   AiOutlineMenu,
   AiOutlinePhone,
   AiOutlineShoppingCart,
+  AiOutlineUser,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
 const Header = () => {
   const [isShowCategories, setShowCategories] = useState(true);
+  const [isShowHumberger, setShowHumberger] = useState(false);
   const [menus] = useState([
     {
       name: "Trang chủ",
@@ -56,6 +58,66 @@ const Header = () => {
 
   return (
     <>
+      <div
+        className={`humberger__menu__overlay${
+          isShowHumberger ? " active" : ""
+        }`}
+        onClick={() => setShowHumberger(false)}
+      />
+      <div
+        className={`humberger__menu__wrapper${isShowHumberger ? " show" : ""}`}
+      >
+        <div className="header__logo">
+          <h1>SiVi SHOP</h1>
+        </div>
+        <div className="humberger__menu__cart">
+          <ul>
+            <li>
+              <Link to={""}>
+                <AiOutlineShoppingCart /> <span>1</span>
+              </Link>
+            </li>
+          </ul>
+          <div className="header__cart__price">
+            Giỏ hàng: <span>{formatter(1001230)}</span>
+          </div>
+        </div>
+        <div className="humberger__menu__widget">
+          <div className="header__top__right__auth">
+            <Link to={""}>
+              <AiOutlineUser /> Đăng nhập
+            </Link>
+          </div>
+        </div>
+        <div className="humberger__menu__nav">
+          <ul>
+            <li>Menu Item</li>
+          </ul>
+        </div>
+        <div className="header__top__right__social">
+          <Link to={""}>
+            <AiOutlineFacebook />
+          </Link>
+          <Link to={""}>
+            <AiOutlineInstagram />
+          </Link>
+          <Link to={""}>
+            <AiOutlineLinkedin />
+          </Link>
+          <Link to={""}>
+            <AiOutlineGlobal />
+          </Link>
+        </div>
+        <div className="humberger__menu__contact">
+          <ul>
+            <li>
+              <i className="fa fa-envelope" /> sivishop@gmail.com
+            </li>
+            <li>Miễn phí đơn từ {formatter(2000000)}</li>
+          </ul>
+        </div>
+      </div>
+
       <div className="header__top">
         <div className="container">
           <div className="row">
@@ -100,12 +162,12 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header__logo">
               <h1>SiVi SHOP</h1>
             </div>
           </div>
-          <div className="col-xl-6">
+          <div className="col-lg-6">
             <nav className="header__menu">
               <ul>
                 {menus?.map((menu, menuKey) => (
@@ -125,7 +187,7 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header__cart">
               <div className="header__cart__price">
                 <span>{formatter(1001230)}</span>
@@ -137,6 +199,9 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div className="humberger__open">
+              <AiOutlineMenu onClick={() => setShowHumberger(true)} />
             </div>
           </div>
         </div>
@@ -203,6 +268,130 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <div className="container">
+         <div className="row hero__categories_container">
+           <div className="col-lg-3 hero__categories">
+             <div
+               className="hero__categories__all"
+               onClick={() => setShowCategories(!isShowCategories)}
+             >
+               <AiOutlineMenu />
+               Danh sách sản phẩm
+             </div>
+             <ul className={isShowCategories ? "" : "hidden"}>
+               <li>
+                 <Link to={"#"}>Thịt tươi</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Rau củ</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Nước trái cây</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Trái cây</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Hải sản</Link>
+               </li>
+             </ul>
+           </div>
+           <div className="col-lg-9 hero__search_container">
+             <div className="hero__search">
+               <div className="hero__search__form">
+                 <form>
+                   <input type="text" placeholder="Bạn đang tìm gì?" />
+                   <button type="submit">Tìm kiếm</button>
+                 </form>
+               </div>
+               <div className="hero__search__phone">
+                 <div className="hero__search__phone__icon">
+                   <AiOutlinePhone />
+                 </div>
+                 <div className="hero__search__phone__text">
+                   <p>0656.789.456</p>
+                   <span>Hỗ trợ 24/7</span>
+                 </div>
+               </div>
+             </div>
+             <div className="hero__item">
+               <div className="hero__text">
+                 <span>Trái cây tươi</span>
+                 <h2>
+                   Rau quả <br />
+                   sạch 100%
+                 </h2>
+                 <p>Miễn phí giao hàng tận nơi</p>
+                 <Link to="" className="primary-btn">
+                   Mua ngay
+                 </Link>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div className="container">
+         <div className="row hero__categories_container">
+           <div className="col-lg-3 hero__categories">
+             <div
+               className="hero__categories__all"
+               onClick={() => setShowCategories(!isShowCategories)}
+             >
+               <AiOutlineMenu />
+               Danh sách sản phẩm
+             </div>
+             <ul className={isShowCategories ? "" : "hidden"}>
+               <li>
+                 <Link to={"#"}>Thịt tươi</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Rau củ</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Nước trái cây</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Trái cây</Link>
+               </li>
+               <li>
+                 <Link to={"#"}>Hải sản</Link>
+               </li>
+             </ul>
+           </div>
+           <div className="col-lg-9 hero__search_container">
+             <div className="hero__search">
+               <div className="hero__search__form">
+                 <form>
+                   <input type="text" placeholder="Bạn đang tìm gì?" />
+                   <button type="submit">Tìm kiếm</button>
+                 </form>
+               </div>
+               <div className="hero__search__phone">
+                 <div className="hero__search__phone__icon">
+                   <AiOutlinePhone />
+                 </div>
+                 <div className="hero__search__phone__text">
+                   <p>0656.789.456</p>
+                   <span>Hỗ trợ 24/7</span>
+                 </div>
+               </div>
+             </div>
+             <div className="hero__item">
+               <div className="hero__text">
+                 <span>Trái cây tươi</span>
+                 <h2>
+                   Rau quả <br />
+                   sạch 100%
+                 </h2>
+                 <p>Miễn phí giao hàng tận nơi</p>
+                 <Link to="" className="primary-btn">
+                   Mua ngay
+                 </Link>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
     </>
   );
 };
