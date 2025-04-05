@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
 const Header = () => {
-  const [isShowCategories, setShowCategories] = useState(true);
+  const [isShowCategories, setShowCategories] = useState(false);
   const [isShowHumberger, setShowHumberger] = useState(false);
   const [menus, setMenus] = useState([
     {
@@ -244,7 +244,7 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row hero__categories_container">
-          <div className="col-lg-3 hero__categories">
+          <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12 hero__categories">
             <div
               className="hero__categories__all"
               onClick={() => setShowCategories(!isShowCategories)}
@@ -270,7 +270,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-9 hero__search_container">
+          <div className="col-lg-9 col-md-12 col-sm-12 col-xs-12 hero__search_container">
             <div className="hero__search">
               <div className="hero__search__form">
                 <form>
