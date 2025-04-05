@@ -7,14 +7,16 @@ import {
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiOutlineMail,
+  AiOutlineMenu,
+  AiOutlinePhone,
   AiOutlineShoppingCart,
-  AiOutlineUser,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
 const Header = () => {
-  const [menus, setMenus] = useState([
+  const [isShowCategories, setShowCategories] = useState(true);
+  const [menus] = useState([
     {
       name: "Trang chủ",
       path: ROUTERS.USER.HOME,
@@ -135,6 +137,68 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row hero__categories_container">
+          <div className="col-lg-3 hero__categories">
+            <div
+              className="hero__categories__all"
+              onClick={() => setShowCategories(!isShowCategories)}
+            >
+              <AiOutlineMenu />
+              Danh sách sản phẩm
+            </div>
+            <ul className={isShowCategories ? "" : "hidden"}>
+              <li>
+                <Link to={"#"}>Thịt tươi</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Rau củ</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Nước trái cây</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Trái cây</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Hải sản</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-9 hero__search_container">
+            <div className="hero__search">
+              <div className="hero__search__form">
+                <form>
+                  <input type="text" placeholder="Bạn đang tìm gì?" />
+                  <button type="submit">Tìm kiếm</button>
+                </form>
+              </div>
+              <div className="hero__search__phone">
+                <div className="hero__search__phone__icon">
+                  <AiOutlinePhone />
+                </div>
+                <div className="hero__search__phone__text">
+                  <p>0656.789.456</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+            <div className="hero__item">
+              <div className="hero__text">
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to="" className="primary-btn">
+                  Mua ngay
+                </Link>
+              </div>
             </div>
           </div>
         </div>
