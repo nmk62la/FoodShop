@@ -11,7 +11,7 @@ import {
 import Breadcrumb from "../theme/breadcrumb";
 import "./style.scss";
 import { formatter } from "utils/fomater";
-import { ProductCard } from "component";
+import { ProductCard, Quantity } from "component";
 import { featProducts } from "utils/common";
 
 const ProductDetailPage = () => {
@@ -22,7 +22,7 @@ const ProductDetailPage = () => {
       <Breadcrumb name="Chi tiết sản phẩm" />
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 product__detail__pic">
+          <div className="col-lg-6 col-xl-12 col-md-12 col-sm-12 col-xs-12 product__detail__pic">
             <img src={cat3Img} alt="product-pic" />
             <div className="main">
               {imgs.map((item, key) => (
@@ -30,7 +30,7 @@ const ProductDetailPage = () => {
               ))}
             </div>
           </div>
-          <div className="col-lg-6 product__detail__text">
+          <div className="col-lg-6 col-xl-12 col-md-12 col-sm-12 col-xs-12 product__detail__text">
             <h2>Rau củ xanh</h2>
             <div className="seen-icon">
               <AiOutlineEye />
@@ -43,6 +43,7 @@ const ProductDetailPage = () => {
               ngon nhất cũng như các loại hoa quả nhập khẩu, hoa quả vùng miền
               khác.
             </p>
+            <Quantity />
             <ul>
               <li>
                 <b>Tình trạng:</b> <span>Còn hàng</span>

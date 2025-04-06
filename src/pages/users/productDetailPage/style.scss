@@ -1,5 +1,6 @@
 @use "sass:map";
 @import "style/pages/theme";
+@import "style/pages/all";
 
 .product__detail__pic {
     display: flex;
@@ -100,6 +101,24 @@
             width: 43%;
             background: #ebebeb;
             content: "";
+        }
+
+        &::after, &::before {
+            @include Responsive($MEDIUM_DEVICE) {
+                width: 42%;
+            }
+
+            @include Responsive($TABLET_DEVICE) {
+                width: 38%;
+            }
+
+            @include Responsive($WIDE_MOBILE) {
+                width: 34%;
+            }
+            
+            @include Responsive($SMALL_DEVICES) {
+                width: 27%;
+            }
         }
     }
 }
