@@ -1,6 +1,5 @@
-import { memo } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import banner1Img from "assets/users/images/banner/banner-1.jpg";
+import banner2Img from "assets/users/images/banner/banner-2.jpg";
 import cat1Img from "assets/users/images/categories/cat-1.jpg";
 import cat2Img from "assets/users/images/categories/cat-2.jpg";
 import cat3Img from "assets/users/images/categories/cat-3.jpg";
@@ -14,13 +13,12 @@ import feature5Img from "assets/users/images/featured/feature-5.jpg";
 import feature6Img from "assets/users/images/featured/feature-6.jpg";
 import feature7Img from "assets/users/images/featured/feature-7.jpg";
 import feature8Img from "assets/users/images/featured/feature-8.jpg";
-import banner1Img from "assets/users/images/banner/banner-1.jpg";
-import banner2Img from "assets/users/images/banner/banner-2.jpg";
-import "./style.scss";
+import { ProductCard } from "component";
+import { memo } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import { AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { formatter } from "utils/fomater";
+import "./style.scss";
 
 const HomePage = () => {
   const responsive = {
@@ -179,29 +177,7 @@ const HomePage = () => {
       data[key].products.forEach((item, j) => {
         tabPanel.push(
           <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={j}>
-            <div className="featured__item pl-pr-10">
-              <div
-                className="featured__item__pic"
-                style={{
-                  backgroundImage: `url(${item.img})`,
-                }}
-              >
-                <ul className="featured__item__pic__hover">
-                  <li>
-                    <AiOutlineEye />
-                  </li>
-                  <li>
-                    <AiOutlineShoppingCart />
-                  </li>
-                </ul>
-              </div>
-              <div className="featured__item__text">
-                <h6>
-                  <Link to="">{item.name}</Link>
-                </h6>
-                <h5>{formatter(item.price)}</h5>
-              </div>
-            </div>
+            <ProductCard name={item.name} img={item.img} price={item.price} />
           </div>
         );
       });

@@ -18,6 +18,15 @@ import { MdEmail } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
+
+export const categories = [
+  "Thịt tươi",
+  "Rau củ",
+  "Nước trái cây",
+  "Trái cây",
+  "Hải sản",
+];
+
 const Header = () => {
   const location = useLocation();
   const [isShowHumberger, setShowHumberger] = useState(false);
@@ -60,14 +69,6 @@ const Header = () => {
       path: "",
     },
   ]);
-
-  const categories = [
-    "Thịt tươi",
-    "Rau củ",
-    "Nước trái cây",
-    "Trái cây",
-    "Hải sản",
-  ];
 
   useEffect(() => {
     const isHome = location.pathname.length <= 1;
