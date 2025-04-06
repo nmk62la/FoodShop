@@ -40,6 +40,29 @@ const ShoppingCartPage = () => {
             </tbody>
           </table>
         </div>
+        <div className="row">
+          <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div className="shopping__continue">
+              <h3>Mã giảm giá</h3>
+              <div className="shopping__discount">
+                <input placeholder="Nhập mã giảm giá" />
+                <button type="button" className="button-submit">Áp dụng</button>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div className="shopping__checkout">
+              <h2>Tổng đơn:</h2>
+              <ul>
+                <li>Số lượng: <span>{2}</span></li>
+                <li>Thành tiền: <span>{formatter(200000)}</span></li>
+              </ul>
+              <button type="button" className="button-submit">
+                Thanh toán
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
