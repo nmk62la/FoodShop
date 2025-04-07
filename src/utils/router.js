@@ -2,8 +2,7 @@ export const ADMIN_PATH = "/quan-tri";
 
 export const ROUTERS = {
   USER: {
-    HOME: "",
-    PROFILE: "thong-tin-ca-nhan",
+    HOME: "/",
     PRODUCTS: "/san-pham",
     PRODUCT: "/san-pham/chi-tiet/:id",
     SHOPPING_CART: "/gio-hang",

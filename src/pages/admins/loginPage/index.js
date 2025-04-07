@@ -21,13 +21,13 @@ const LoginAdPage = () => {
             <label htmlFor="username" className="login__label">
               Tên đăng nhập
             </label>
-            <input type="text" id="username" name="username" required />
+            <input type="text" id="username" name="username" value="admin" required />
           </div>
           <div className="login__form-group">
             <label htmlFor="password" className="login__label">
               Mật khẩu
             </label>
-            <input type="password" id="username" name="password" required />
+            <input type="password" id="username" name="password" value="admin@123" required />
           </div>
           <button type="submit" className="login__button">
             ĐĂNG NHẬP

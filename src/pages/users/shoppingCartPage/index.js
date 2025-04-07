@@ -29,7 +29,7 @@ const ShoppingCartPage = () => {
               <tr>
                 <td className="shopping__cart__item">
                   <img src="https://via.placeholder.com/50" alt="product-pic" />
-                  <h4>Tên sản phẩm 1</h4>
+                  <h4>Thịt bò nạt</h4>
                 </td>
                 <td>{formatter(200000)}</td>
                 <td>

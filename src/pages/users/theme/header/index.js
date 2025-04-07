@@ -89,7 +89,7 @@ const Header = () => {
         className={`humberger__menu__wrapper${isShowHumberger ? " show" : ""}`}
       >
         <div className="header__logo">
-          <h1>SiVi SHOP</h1>
+          <h1>Food Shop</h1>
         </div>
         <div className="humberger__menu__cart">
           <ul>
@@ -165,9 +165,9 @@ const Header = () => {
         <div className="humberger__menu__contact">
           <ul>
             <li>
-              <MdEmail /> sivishop@gmail.com
+              <MdEmail /> nguyenminhkhanhla1.6@gmail.com
             </li>
-            <li>Miễn phí đơn từ {formatter(2000000)}</li>
+            <li>Miễn phí đơn từ {formatter(200000)}</li>
           </ul>
         </div>
       </div>
@@ -179,7 +179,7 @@ const Header = () => {
               <ul>
                 <li>
                   <AiOutlineMail />
-                  hello@gmail.com
+                  nguyenminhkhanhla1.6@gmail.com
                 </li>
                 <li>Miễn phí ship đơn từ {formatter(200000)}</li>
               </ul>
@@ -218,7 +218,7 @@ const Header = () => {
         <div className="row">
           <div className="col-lg-3">
             <div className="header__logo">
-              <h1>SiVi SHOP</h1>
+              <h1>Shop Food</h1>
             </div>
           </div>
           <div className="col-lg-6">
@@ -291,7 +291,7 @@ const Header = () => {
                   <AiOutlinePhone />
                 </div>
                 <div className="hero__search__phone__text">
-                  <p>0656.789.456</p>
+                  <p>0942.802.649</p>
                   <span>Hỗ trợ 24/7</span>
                 </div>
               </div>

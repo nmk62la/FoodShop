@@ -1,13 +1,15 @@
 import { memo } from "react";
 import "./style.scss";
 import { AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
-import { Link, generatePath } from "react-router-dom";
+import { Link, generatePath, useNavigate } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
 
 const ProductCard = ({ img, name, price }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="featured__item pl-pr-10">
+    <div className="featured__item pl-pr-10" onClick={() => navigate("/san-pham/chi-tiet/1")}>
       <div
         className="featured__item__pic"
         style={{

@@ -16,7 +16,7 @@ const HeaderAd = ({ children, ...props }) => {
     },
     {
       path: ROUTERS.ADMIN.LOGOUT,
-      onClick: () => {},
+      onClick: () => navigate(ROUTERS.ADMIN.LOGOUT),
       label: "Đăng xuất",
       icon: <AiOutlineLogout />,
     },

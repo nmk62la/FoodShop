@@ -34,4 +34,10 @@
             }
         }
     }
+
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

@@ -1,24 +1,27 @@
 import { memo } from "react";
 import "./style.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineLinkedin,
 } from "react-icons/ai";
+import { ROUTERS } from "utils/router";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div className="footer__about">
-              <h1 className="footer__about__logo">SiVi SHOP</h1>
+              <h1 className="footer__about__logo" onClick={() => navigate(ROUTERS.USER.HOME)}>Food Shop</h1>
               <ul>
-                <li>Địa chỉ: 213 Dương Đình Nghệ</li>
-                <li>Phone: 0977-232-232</li>
-                <li>Email: sivicode@gmail.com</li>
+                <li>Địa chỉ: Số 1, VVN, L.Chiểu, Thủ đức</li>
+                <li>Phone: 0942-802-649</li>
+                <li>Email: nmkla62@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -56,7 +59,7 @@ const Footer = () => {
               <form action="#">
                 <div className="input-group">
                   <input type="text" placeholder="Nhập email" />
-                  <button type="submit" className="button-submit">
+                  <button type="submit" className="button-submit" onClick={() => navigate(ROUTERS.ADMIN.LOGIN)}>
                     Đăng ký
                   </button>
                 </div>

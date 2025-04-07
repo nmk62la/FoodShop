@@ -30,15 +30,15 @@ const OrderPageAdPage = () => {
     {
       id: 1,
       total: 2000000,
-      customerName: "John 1",
-      date: "11/12/2025",
+      customerName: "Nguyễn Minh Khánh",
+      date: "11/12/2024",
       status: "Đang lên đơn",
     },
     {
       id: 2,
       total: 2000000,
-      customerName: "John 2",
-      date: "10/12/2025",
+      customerName: "Lương Chin Du",
+      date: "10/12/2024",
       status: "Đang lên đơn",
     },
   ];
