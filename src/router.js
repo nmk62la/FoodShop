@@ -8,6 +8,7 @@ import ProductDetailPage from "./pages/users/productDetailPage";
 import ShoppingCartPage from "pages/users/shoppingCartPage";
 import CheckoutPage from "pages/users/checkoutPage";
 import LoginAdPage from "pages/admins/loginPage";
+import OrderPageAdPage from "pages/admins/orderPage";
 import MasterAdLayout from "pages/admins/theme/masterAdLayout";
 
 const renderUserRouter = () => {
@@ -50,11 +51,14 @@ const renderUserRouter = () => {
 };
 
 const renderAdminRouter = () => {
-
   const adminRouters = [
     {
       path: ROUTERS.ADMIN.LOGIN,
       component: <LoginAdPage />,
+    },
+    {
+      path: ROUTERS.ADMIN.ORDERS,
+      component: <OrderPageAdPage />,
     },
   ];
 
@@ -71,7 +75,7 @@ const renderAdminRouter = () => {
 
 const RouterCustom = () => {
   const location = useLocation();
-  const isAdminRouters = location.pathname.startsWith(ADMIN_PATH)
+  const isAdminRouters = location.pathname.startsWith(ADMIN_PATH);
 
   return isAdminRouters ? renderAdminRouter() : renderUserRouter();
 };

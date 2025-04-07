@@ -15,7 +15,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTERS } from "utils/router";
 
@@ -28,6 +28,7 @@ export const categories = [
 ];
 
 const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [isShowHumberger, setShowHumberger] = useState(false);
   const [isHome, setIsHome] = useState(location.pathname.length <= 1);
@@ -205,7 +206,7 @@ const Header = () => {
                     <AiOutlineGlobal />
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => navigate(ROUTERS.ADMIN.LOGIN)}>
                   <span>Đăng nhập</span>
                 </li>
               </ul>

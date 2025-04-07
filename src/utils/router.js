@@ -1,4 +1,4 @@
-export const ADMIN_PATH = "/quan-tri"
+export const ADMIN_PATH = "/quan-tri";
 
 export const ROUTERS = {
   USER: {
@@ -11,5 +11,6 @@ export const ROUTERS = {
   },
   ADMIN: {
     LOGIN: `${ADMIN_PATH}/dang-nhap`,
-  }
+    ORDERS: `${ADMIN_PATH}/dat-hang`,
+  },
 };

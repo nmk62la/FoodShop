@@ -28,14 +28,13 @@ const ShoppingCartPage = () => {
             <tbody>
               <tr>
                 <td className="shopping__cart__item">
-                  <img
-                    src="https://via.placeholder.com/50"
-                    alt="product-pic"
-                  />
+                  <img src="https://via.placeholder.com/50" alt="product-pic" />
                   <h4>Tên sản phẩm 1</h4>
                 </td>
                 <td>{formatter(200000)}</td>
-                <td><Quantity quantity="2" hasAddToCart={false} /></td>
+                <td>
+                  <Quantity quantity="2" hasAddToCart={false} />
+                </td>
                 <td>{formatter(400000)}</td>
                 <td className="icon_close">
                   <AiOutlineClose />
@@ -50,7 +49,9 @@ const ShoppingCartPage = () => {
               <h3>Mã giảm giá</h3>
               <div className="shopping__discount">
                 <input placeholder="Nhập mã giảm giá" />
-                <button type="button" className="button-submit">Áp dụng</button>
+                <button type="button" className="button-submit">
+                  Áp dụng
+                </button>
               </div>
             </div>
           </div>
@@ -58,10 +59,18 @@ const ShoppingCartPage = () => {
             <div className="shopping__checkout">
               <h2>Tổng đơn:</h2>
               <ul>
-                <li>Số lượng: <span>{2}</span></li>
-                <li>Thành tiền: <span>{formatter(200000)}</span></li>
+                <li>
+                  Số lượng: <span>{2}</span>
+                </li>
+                <li>
+                  Thành tiền: <span>{formatter(200000)}</span>
+                </li>
               </ul>
-              <button type="button" className="button-submit" onClick={() => navigate(ROUTERS.USER.CHECKOUT)}>
+              <button
+                type="button"
+                className="button-submit"
+                onClick={() => navigate(ROUTERS.USER.CHECKOUT)}
+              >
                 Thanh toán
               </button>
             </div>
