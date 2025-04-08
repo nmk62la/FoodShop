@@ -217,8 +217,8 @@ const Header = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-3">
-            <div className="header__logo">
-              <h1>Shop Food</h1>
+            <div className="header__logo" onClick={() => navigate(ROUTERS.USER.HOME)}>
+              <h1>Food Shop</h1>
             </div>
           </div>
           <div className="col-lg-6">

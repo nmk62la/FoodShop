@@ -73,6 +73,10 @@ $bannerImg: "/assets/users/images/hero/banner.jpg";
 
 .header__logo {
     padding: 15px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .header__menu {
